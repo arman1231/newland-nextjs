@@ -1,0 +1,18 @@
+.callback {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: end;
+}
+
+.button {
+    background-color: var(--globalgreen);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+}

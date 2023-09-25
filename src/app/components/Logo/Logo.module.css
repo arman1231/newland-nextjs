@@ -1,0 +1,18 @@
+.logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    gap: 6px;
+    font-size: 28px;
+    color: black;
+}
+
+.logoTopText {
+    font-weight: bolder;
+}
+
+.logoBottomText {
+    font-weight: 300;
+}

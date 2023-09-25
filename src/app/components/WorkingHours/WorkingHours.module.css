@@ -1,0 +1,17 @@
+.workingHours {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.hours {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.phone {
+    font-weight: 900;
+    font-size: 26px;
+    color: var(--secondary-color)
+}
