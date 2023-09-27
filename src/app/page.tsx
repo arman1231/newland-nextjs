@@ -172,12 +172,82 @@ export default function Home() {
           <div className={styles.quizWrapper}>
             <div className={styles.quizToptext}>
               <div className={styles.quizToptextLeft}><div className={russo.className}><h2 className={styles.quizTitle}>Ценовая политика</h2></div>
-              <p style={{fontSize: '24px'}}>- мы используем прогрессивную систему ценообразования, итоговый расчет зависит от ряда параметров</p>
+                <p style={{ fontSize: '24px' }}>- мы используем прогрессивную систему ценообразования, итоговый расчет зависит от ряда параметров</p>
               </div>
-              <div className={styles.quizToptextRigth}><p style={{fontWeight: 'bold', fontSize: '18px'}}>Пройдите короткий опрос <span style={{color: 'var(--globalgreen)'}}>за 1 минуту</span></p>
-              <p>и специалисты New Land рассчитают итоговую стоимость</p></div>
+              <div className={styles.quizToptextRigth}><p style={{ fontWeight: 'bold', fontSize: '18px' }}>Пройдите короткий опрос <span style={{ color: 'var(--globalgreen)' }}>за 1 минуту</span></p>
+                <p>и специалисты New Land рассчитают итоговую стоимость</p></div>
             </div>
             <Quiz />
+          </div>
+        </div>
+      </section>
+      <section className={styles.contacts}>
+        <div className="wrapper">
+          <div className={styles.toptextWrapper}>
+            <div className={russo.className}><h2 className={styles.techTitle}>Мы всегда рады
+              гостям в нашем офисе</h2></div>
+            <p style={{ fontSize: '24px', textAlign: "center", marginBottom: "35px" }}>Специалисты с удовольствием
+              проконсультируют вас по любому вопросу</p>
+          </div>
+          <ul className={styles.contactsList}>
+            <li className={styles.contactsListItem}><Image
+              src="/address.png"
+              width={20}
+              height={20}
+              alt="Picture of the author"
+            /><span className={styles.contactsListItemChild}>Адрес</span><span className={styles.contactsListItemChild2}>Москва, ул. Мосфильмовская 17Б</span></li>
+            <li className={styles.contactsListItem}>
+              <Image
+                src="/map-email.png"
+                width={20}
+                height={20}
+                alt="Picture of the author"
+              />
+              <span className={styles.contactsListItemChild}>Электронная почта</span>
+              <a href="mailto:info@newland.su" className={styles.contactsListItemChild2}>info@newland.su</a>
+            </li>
+            <li className={styles.contactsListItem}>
+              <Image
+                src="/map-phone.png"
+                width={20}
+                height={20}
+                alt="Picture of the author"
+              />
+              <span className={styles.contactsListItemChild}>Телефон</span>
+              <a href="tel:+74993228803" className={styles.contactsListItemChild2}>+7 (499) 322-88-03</a>
+            </li>
+          </ul>
+          <div className={styles.tools}>
+            <Image
+              src="/tools/1.jpg"
+              width={238 * 0.8}
+              height={318 * 0.8}
+              alt="Picture of the author"
+            />
+            <Image
+              src="/tools/2.jpg"
+              width={382 * 0.8}
+              height={287 * 0.8}
+              alt="Picture of the author"
+            />
+            <Image
+              src="/tools/3.jpg"
+              width={174 * 0.8}
+              height={232 * 0.8}
+              alt="Picture of the author"
+            />
+            <Image
+              src="/tools/4.jpg"
+              width={317 * 0.8}
+              height={288 * 0.8}
+              alt="Picture of the author"
+            />
+            <Image
+              src="/tools/5.jpg"
+              width={200 * 0.8}
+              height={345 * 0.8}
+              alt="Picture of the author"
+            />
           </div>
         </div>
       </section>

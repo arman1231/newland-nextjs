@@ -20,7 +20,7 @@ export default function RootLayout({
       <body className={lato.className}>
         <Header showBackgroundImage={true} />
           {children}
-        <Header showBackgroundImage={false} />
+        {/* <Header showBackgroundImage={false} /> */}
         </body>
     </html>
   )

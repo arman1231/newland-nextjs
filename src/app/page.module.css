@@ -302,3 +302,40 @@
 .quizToptextRigth {
   text-align: center;
 }
+
+.tools {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+ .contactsList {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+ }
+
+ .contactsListItem {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 18px;
+ }
+
+ .contactsListItem img {
+  position: absolute;
+  left: -30px
+ }
+ .contactsListItemChild {
+  color: #6d6d6d;
+ }
+
+ .contactsListItemChild2 {
+  font-weight: 600;
+ }
+
+ .toptextWrapper {
+  width: 60%;
+  margin: 0 auto;
+ }
