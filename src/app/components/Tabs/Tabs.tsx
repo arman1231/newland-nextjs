@@ -93,16 +93,16 @@ export const Tabs = () => {
     return (
         <div className={styles.tabs}>
             <ul className={styles.tabsMenu}>
-                {tabList.map((item) => (<li onClick={() => setActiveTab(item.label)} className={`${styles.tabsItem} ${activeTab === item.label && styles.actives}`}><Image
+                {tabList.map((item, i) => (<li key={i} onClick={() => setActiveTab(item.label)} className={`${styles.tabsItem} ${activeTab === item.label && styles.actives}`}><Image
                     src={item.img.src}
                     width={item.img.width}
                     height={item.img.height}
                     alt={item.img.alt}
                 /><span>{item.label}</span></li>))}
             </ul>
-            {tabList.map((el) => {
+            {tabList.map((el, i) => {
                 return (
-                    <div
+                    <div key={i}
                         className={`${styles.tab} ${el.label === activeTab ? styles.active : styles.inactive
                             }`}
                     >

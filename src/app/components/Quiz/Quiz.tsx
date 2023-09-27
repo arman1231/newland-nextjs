@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Quiz.module.css'
 import Image from 'next/image'
 
@@ -13,7 +13,7 @@ const data = [
         id: 2,
         title: 'Какой вид камня требуется обработать?',
         subtitle: 'Выберите один из пунктов',
-        answers: ['Мрамор', 'Гранит', 'Оникс', 'Исскуственный', 'Empty'],
+        answers: ['Мрамор', 'Гранит', 'Оникс', 'Травертин', 'Исскуственный', 'Empty'],
         buttonText: 'Далее',
     },
     {
@@ -42,12 +42,30 @@ const data = [
 ]
 
 export const Quiz = () => {
+    const [activePage, setActivePage] = useState(1);
+    const [answers, setAnswers] = useState<any>();
+    const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
+    console.log(answers);
+    const nextPage = () => {
+        setActivePage(activePage + 1);
+        setSelectedAnswer(null);
+      };
+
+      const handleInputChange = (event: { target: { value: any; }; }) => {
+        const inputValue = event.target.value;
+        setAnswers((prevAnswers: any) => ({
+          ...prevAnswers,
+          [activePage]: inputValue,
+        }));
+        setSelectedAnswer(inputValue);
+      };
+
     return (
         <div className={styles.quiz}>
             {data.map((page, i) => {
-                if (page.id === 1) {
+                if (page.id === 1 && page.id === activePage) {
                     return (
-                        <div className={styles.frontpage}>
+                        <div className={styles.frontpage} key={i}>
                             <Image
                                 src="/rotor.jpg"
                                 width={450}
@@ -55,15 +73,78 @@ export const Quiz = () => {
                                 alt="Picture of the author"
                             />
                             <div>
-                            <h3 className={styles.frontpageTitle}>{page.title}</h3>
-                            <p className={styles.frontpageSubtitle}>{page.subtitle}</p>
-                            <button className={styles.fronpageButton}>Начать</button>
+                                <h3 className={styles.frontpageTitle}>{page.title}</h3>
+                                <p className={styles.frontpageSubtitle}>{page.subtitle}</p>
+                                <button onClick={() => setActivePage(2)} className={styles.fronpageButton}>Начать</button>
+                            </div>
+                        </div>
+
+                    )
+                }
+                if (page.id > 1 && page.id < 5 && page.id === activePage) {
+                    return (
+                      <div className={styles.quizMainWrapper}>
+                        <div className={styles.quizMainContent}>
+                          <h3 className={styles.pageTitle}>{page.title}</h3>
+                          <p className={styles.pageSubtitle}>{page.subtitle}</p>
+                          <div className={styles.answers}>
+                            {page.answers?.map((answer, i) => {
+                              if (answer === 'Empty') {
+                                return (
+                                  <input
+                                    key={i}
+                                    className={styles.input}
+                                    type='text'
+                                    placeholder='Другое...'
+                                    onChange={handleInputChange} // handle input change
+                                  />
+                                );
+                              }
+                              return (
+                                <div
+                                  key={i}
+                                  onClick={() => {
+                                    setAnswers((prevAnswers: any) => ({
+                                      ...prevAnswers,
+                                      [page.title]: answer,
+                                    }));
+                                    setSelectedAnswer(answer);
+                                  }}
+                                  className={`${styles.answer} ${
+                                    answer === selectedAnswer ? styles.selected : ''
+                                  }`}
+                                >
+                                  {answer}
+                                </div>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  }
+                  if (page.id === 5 && page.id === activePage) {
+                    return (
+                        <div className={styles.frontpage} key={i}>
+                            <div>
+                                <h3 className={styles.frontpageTitle}>{page.title}</h3>
+                                <p className={styles.frontpageSubtitle}>{page.subtitle}</p>
+                                <button onClick={() => setActivePage(1)} className={styles.fronpageButton}>Отправить</button>
                             </div>
                         </div>
 
                     )
                 }
             })}
+            {activePage > 1 && activePage < 5 && <div className={styles.quizFooter}>
+            <button 
+  onClick={nextPage} 
+  className={styles.fronpageButton}
+  disabled={selectedAnswer === null}
+>
+  Далее
+</button>
+            </div>}
         </div>
     )
 }
