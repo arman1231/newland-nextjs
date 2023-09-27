@@ -1,9 +1,9 @@
 
-import { Lato , Russo_One } from 'next/font/google'
+import { Inter , Russo_One } from 'next/font/google'
 
-export const lato = Lato({
-    weight: ['100', '300', '400', '700'],
-    style: ['normal', 'italic'],
+export const lato = Inter({
+    weight: ['100', '200', '300', '400', '500', '700'],
+    style: ['normal'],
     subsets: ['latin'],
     display: 'swap',
   })

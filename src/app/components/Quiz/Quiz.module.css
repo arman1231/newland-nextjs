@@ -1,0 +1,36 @@
+.quiz {
+    margin: 25px 10px;
+    background-color: white;
+    color: var(--main-color);
+    width: 70%;
+    height: 50%;
+    padding: 35px 15px;
+}
+
+.frontpage {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.frontpageTitle {
+    text-align: left;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.frontpageSubtitle {
+    padding: 10px 0;
+    font-weight: 300;
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+.fronpageButton {
+    background-color: var(--globalgreen);
+    padding: 15px 20px;
+    border: none;
+    border-radius: 35px;
+    font-size: 18px;
+    cursor: pointer;
+}

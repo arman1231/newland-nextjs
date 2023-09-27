@@ -16,14 +16,15 @@
     align-items: center;
     gap: 10px;
     text-align: center;
-    width: 230px;
+    width: 250px;
     padding: 10px;
     transition: all 0.2s ease-in-out;
     cursor: pointer;
     border-radius: 5px;
+    box-shadow: 0px 0px 5px 1px rgba(34, 60, 80, 0.2) inset;
 }
 
-.active {
+.actives {
     background-color: #FF9E73;
 }
 
@@ -31,3 +32,51 @@
     background-color: #a0a0a0;
     color: wheat;
 }
+
+.tab {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.tabContentText {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tabContentTitle {
+    font-size: 28px;
+}
+
+.tabContentP {
+    font-size: 18px;
+}
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  .tab.active {
+    display: flex;
+    animation: fadeIn 0.5s ease-in forwards;
+  }
+  
+  .tab.inactive {
+    display: none;
+    animation: fadeOut 0.5s ease-in forwards;
+  }
