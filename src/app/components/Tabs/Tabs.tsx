@@ -6,13 +6,13 @@ export const Tabs = () => {
     const tabList = [
         {
             img: {
-                src: "/stopwatch.png",
+                src: "/nextImages/stopwatch.png",
                 width: 40,
                 height: 52,
                 alt: "watch",
             },
             img2: {
-                src: '/tab1.png',
+                src: '/nextImages/tab1.png',
                 width: 581,
                 height: 395,
                 alt: "нью лэнд"
@@ -27,13 +27,13 @@ export const Tabs = () => {
         },
         {
             img: {
-                src: "/stairs.png",
+                src: "/nextImages/stairs.png",
                 width: 67,
                 height: 58,
                 alt: "watch"
             },
             img2: {
-                src: '/tab2.jpg',
+                src: '/nextImages/tab2.jpg',
                 width: 581,
                 height: 395,
                 alt: "нью лэнд"
@@ -48,13 +48,13 @@ export const Tabs = () => {
         },
         {
             img: {
-                src: "/tile.png",
+                src: "/nextImages/tile.png",
                 width: 69,
                 height: 56,
                 alt: "watch"
             },
             img2: {
-                src: '/tab3.jpg',
+                src: '/nextImages/tab3.jpg',
                 width: 581,
                 height: 395,
                 alt: "нью лэнд"
@@ -69,13 +69,13 @@ export const Tabs = () => {
         },
         {
             img: {
-                src: "/wetFloor.png",
+                src: "/nextImages/wetFloor.png",
                 width: 35,
                 height: 53,
                 alt: "watch",
             },
             img2: {
-                src: '/tab4.jpg',
+                src: '/nextImages/tab4.jpg',
                 width: 581,
                 height: 395,
                 alt: "нью лэнд"

@@ -6,7 +6,7 @@ export const Logo = () => {
   return (
     <div className={styles.logo}>
         <Image
-      src="/logo.jpg"
+      src="/nextImages/logo.jpg"
       width={64}
       height={64}
       alt="Picture of the author"

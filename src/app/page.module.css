@@ -17,7 +17,7 @@
 .cubes::after {
   content: '';
   position: absolute;
-  background-image: url('../../public/gloves.png');
+  background-image: url('../../public/nextImages/gloves.png');
   width: 400px;
   height: 400px;
   background-repeat: no-repeat;
@@ -58,6 +58,8 @@
   transform: translateX(-15%);
 }
 
+.topCubes {}
+
 .bottomCubes {
   transform: translateY(-23%);
 }
@@ -96,6 +98,10 @@
   position: absolute;
 }
 
+.mobileCubes {
+  display: none;
+}
+
 .technology {
   position: relative;
 }
@@ -103,7 +109,7 @@
 .technology::after {
   content: '';
   position: absolute;
-  background-image: url('../../public/diamondCup.png');
+  background-image: url('../../public/nextImages/diamondCup.png');
   background-repeat: no-repeat;
   background-position: top;
   background-size: contain;
@@ -145,7 +151,7 @@
   content: '';
   width: 100px;
   height: 150px;
-  background-image: url('../../public/stoneForm.png');
+  background-image: url('../../public/nextImages/stoneForm.png');
   background-repeat: no-repeat;
   background-position: top left;
   bottom: -50px;
@@ -202,7 +208,7 @@
 }
 
 .callback {
-  background: linear-gradient(180deg, rgba(0,0,0,1) 70%, rgba(0,133,255,1) 85%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 1) 70%, rgba(0, 133, 255, 1) 85%);
   color: white;
 }
 
@@ -231,7 +237,7 @@
   content: '';
   width: 100px;
   height: 150px;
-  background-image: url('../../public/stoneForm.png');
+  background-image: url('../../public/nextImages/stoneForm.png');
   background-repeat: no-repeat;
   background-position: top left;
   bottom: -50px;
@@ -279,6 +285,35 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+
+.quizWrapper::after {
+  position: absolute;
+  content: '';
+  width: 250px;
+  height: 250px;
+  background-image: url('../../public/nextImages/gloves.png');
+  background-size: 250px 250px;
+  background-repeat: no-repeat;
+  background-position: top left;
+  object-fit: contain;
+  bottom: -25%;
+  left: 15px;
+}
+
+.quizWrapper::before {
+  position: absolute;
+  content: '';
+  width: 250px;
+  height: 220px;
+  background-image: url('../../public/nextImages/floorGrinding.png');
+  background-size: 250px 220px;
+  background-repeat: no-repeat;
+  background-position: top left;
+  object-fit: contain;
+  bottom: -25%;
+  right: 15px;
 }
 
 .quizTitle {
@@ -286,6 +321,10 @@
   font-size: 40px;
   font-weight: 400;
   line-height: 72px;
+}
+
+.quizSubtitle {
+  font-size: 24px;
 }
 
 .quizToptext {
@@ -309,33 +348,227 @@
   justify-content: space-between;
   align-items: center;
 }
- .contactsList {
+
+.contactsList {
   list-style: none;
   display: flex;
   justify-content: space-evenly;
- }
+}
 
- .contactsListItem {
+.contactsListItem {
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 5px;
   font-size: 18px;
- }
+}
 
- .contactsListItem img {
+.contactsListItem img {
   position: absolute;
   left: -30px
- }
- .contactsListItemChild {
+}
+
+.contactsListItemChild {
   color: #6d6d6d;
- }
+}
 
- .contactsListItemChild2 {
+.contactsListItemChild2 {
   font-weight: 600;
- }
+}
 
- .toptextWrapper {
+.toptextWrapper {
   width: 60%;
   margin: 0 auto;
- }
+}
+
+@media screen and (max-width: 800px) {
+  .cubes {}
+
+  .cubesTitle {
+    text-align: center;
+    font-size: 34px;
+    font-weight: 400;
+    line-height: normal;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .mobileCubes {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cubesWrap {
+    
+  }
+
+  .mobileCube {
+    display: flex;
+    flex-direction: row;
+    align-items: center ;
+  }
+
+  /* .mobileCube {
+    transform: scale(0.6);
+    margin-top: -220px;
+    margin-bottom: -150px;
+  }
+
+  #cubeLeft {
+    transform: scale(0.6) translateX(75px);
+  }
+
+  #cubeRigth {
+    transform: scale(0.6) translateX(-75px);
+  } */
+
+
+
+  .topCubes {
+    display: none;
+  }
+
+  .bottomCubes {
+    display: none;
+  }
+
+  .cubes::after {
+    display: none;
+  }
+
+  .techTitle {
+    text-align: center;
+    font-size: 34px;
+    font-weight: 400;
+    line-height: normal;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .techSubtitle {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 18px;
+    gap: 5px;
+  }
+
+  .technology::after {
+
+    width: 55px;
+    height: 55px;
+    bottom: -5%;
+    right: 0%;
+    z-index: 999;
+  }
+
+  .portfolioTitle {
+    text-align: center;
+    font-size: 34px;
+    font-weight: 400;
+    line-height: normal;
+    padding-top: 15px;
+  }
+
+  .portfolioSubtitle {
+    font-size: 22px;
+  }
+
+  .portfolio::after {
+    position: absolute;
+    content: '';
+    width: 50px;
+    height: 100px;
+    background-size: contain;
+    background-image: url('../../public/nextImages/stoneForm.png');
+    background-repeat: no-repeat;
+    background-position: top left;
+    bottom: -10%;
+    left: 0%;
+  }
+
+  .smetaWrapper {
+    flex-wrap: wrap;
+  }
+
+  .smetaWrapper img {
+    width: 100%;
+  }
+
+  .smetaText {
+    gap: 5px;
+  }
+
+  .smetaTitle {
+    text-align: right;
+    font-size: 34px;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .smetaSubtitle {
+    font-size: 20px;
+  }
+
+  .smetaSmalltext {
+    width: 100%;
+  }
+
+  .callbackSubtitle {
+    text-align: center;
+    margin: 0 auto;
+    font-size: 20px;
+    width: 100%;
+  }
+
+  .quiz {
+    padding: 0px;
+  }
+
+  .quizTitle {
+    font-size: 34px;
+    line-height: normal;
+  }
+
+  .quizToptext {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .quizSubtitle {
+    font-size: 18px;
+  }
+
+  .quizWrapper::after {
+    display: none;
+  }
+
+  .quizWrapper::before {
+    display: none;
+  }
+
+  .toptextWrapper {
+    width: 100%;
+  }
+
+  .tools {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .contactsList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: start;
+    margin-left: 30px;
+    gap: 10px;
+  }
+}

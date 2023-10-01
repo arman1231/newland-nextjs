@@ -5,60 +5,61 @@ import { russo } from './fonts'
 import { Tabs } from './components/Tabs/Tabs'
 import ImageGallery from "react-image-gallery";
 import { Quiz } from './components/Quiz/Quiz'
+import { Form } from './components/Form/Form'
 
 const images = [
   {
-    original: "/portfolio/p1.jpg",
-    thumbnail: "/portfolio/p1t.jpg",
+    original: "/nextImages/portfolio/p1.jpg",
+    thumbnail: "/nextImages/portfolio/p1t.jpg",
     originalHeight: 807,
     originalWidth: 1076,
     originalClass: styles.customImage,
   },
   {
-    original: "/portfolio/p2.jpg",
-    thumbnail: "/portfolio/p2t.jpg",
+    original: "/nextImages/portfolio/p2.jpg",
+    thumbnail: "/nextImages/portfolio/p2t.jpg",
     originalHeight: 807,
     originalWidth: 1076,
     originalClass: styles.customImage,
   },
   {
-    original: "/portfolio/p3.jpg",
-    thumbnail: "/portfolio/p3t.jpg",
+    original: "/nextImages/portfolio/p3.jpg",
+    thumbnail: "/nextImages/portfolio/p3t.jpg",
     originalHeight: 807,
     originalWidth: 1076,
     originalClass: styles.customImage,
   },
   {
-    original: "/portfolio/p4.jpg",
-    thumbnail: "/portfolio/p4t.jpg",
+    original: "/nextImages/portfolio/p4.jpg",
+    thumbnail: "/nextImages/portfolio/p4t.jpg",
     originalHeight: 807,
     originalWidth: 1076,
     originalClass: styles.customImage,
   },
   {
-    original: "/portfolio/p5.jpg",
-    thumbnail: "/portfolio/p5t.jpg",
+    original: "/nextImages/portfolio/p5.jpg",
+    thumbnail: "/nextImages/portfolio/p5t.jpg",
     originalHeight: 807,
     originalWidth: 1076,
     originalClass: styles.customImage,
   },
   {
-    original: "/portfolio/p6.jpg",
-    thumbnail: "/portfolio/p6t.jpg",
+    original: "/nextImages/portfolio/p6.jpg",
+    thumbnail: "/nextImages/portfolio/p6t.jpg",
     originalHeight: 807,
     originalWidth: 1076,
     originalClass: styles.customImage,
   },
   {
-    original: "/portfolio/p7.jpg",
-    thumbnail: "/portfolio/p7t.jpg",
+    original: "/nextImages/portfolio/p7.jpg",
+    thumbnail: "/nextImages/portfolio/p7t.jpg",
     originalHeight: 807,
     originalWidth: 1076,
     originalClass: styles.customImage,
   },
   {
-    original: "/portfolio/p8.jpg",
-    thumbnail: "/portfolio/p8t.jpg",
+    original: "/nextImages/portfolio/p8.jpg",
+    thumbnail: "/nextImages/portfolio/p8t.jpg",
     originalHeight: 807,
     originalWidth: 1076,
     originalClass: styles.customImage,
@@ -74,15 +75,45 @@ export default function Home() {
             <h2 className={styles.cubesTitle}>Проводим реставрационные работы:</h2>
           </div>
           <div className={styles.cubesWrap}>
+            <div className={styles.mobileCubes}>
+              <div className={styles.mobileCube}><span className={styles.cubesTitleLeft2}>Мрамор</span><Image unoptimized
+                src="/nextImages/cube-1.png"
+                width={200}
+                height={200}
+                alt="Мрамор"
+              /></div>
+              <div className={styles.mobileCube}><span className={styles.cubesTitleRigth2}>Гранит</span><Image
+                unoptimized
+                src="/nextImages/cube-2.png"
+                width={200}
+                height={200}
+                alt="Мрамор"
+              /></div>
+               <div className={styles.mobileCube}><span className={styles.cubesTitleLeft2}>Оникс</span><Image
+                unoptimized
+                src="/nextImages/cube-3.png"
+                width={200}
+                height={200}
+                alt="Мрамор"
+              /></div>
+              <div className={styles.mobileCube}><span className={styles.cubesTitleRigth2}>Искусственный камень</span><Image
+                unoptimized
+                src="/nextImages/cube-4.png"
+                width={200}
+                height={200}
+                alt="Мрамор"
+              /></div>
+            </div>
             <div className={styles.topCubes}>
-              <div className={styles.cube} id={styles.cubeLeft}><span className={styles.cubesTitleLeft}>Мрамор</span><Image
-                src="/cube-1.png"
+              <div className={styles.cube} id={styles.cubeLeft}><span className={styles.cubesTitleLeft}>Мрамор</span><Image unoptimized
+                src="/nextImages/cube-1.png"
                 width={400}
                 height={400}
                 alt="Мрамор"
               /></div>
               <div className={styles.cube} id={styles.cubeRigth}><span className={styles.cubesTitleRigth}>Гранит</span><Image
-                src="/cube-2.png"
+                unoptimized
+                src="/nextImages/cube-2.png"
                 width={400}
                 height={400}
                 alt="Мрамор"
@@ -90,13 +121,15 @@ export default function Home() {
             </div>
             <div className={styles.bottomCubes}>
               <div className={styles.cube} id={styles.cubeLeft}><span className={styles.cubesTitleLeft}>Оникс</span><Image
-                src="/cube-3.png"
+                unoptimized
+                src="/nextImages/cube-3.png"
                 width={400}
                 height={400}
                 alt="Мрамор"
               /></div>
               <div className={styles.cube} id={styles.cubeRigth}><span className={styles.cubesTitleRigth}>Искусственный камень</span><Image
-                src="/cube-4.png"
+                unoptimized
+                src="/nextImages/cube-4.png"
                 width={400}
                 height={400}
                 alt="Мрамор"
@@ -126,8 +159,8 @@ export default function Home() {
       <section className={styles.smeta}>
         <div className="wrapper">
           <div className={styles.smetaWrapper}>
-            <Image
-              src="/smeta.jpg"
+            <Image unoptimized
+              src="/nextImages/smeta.jpg"
               width={607}
               height={301}
               alt="Мрамор"
@@ -145,26 +178,7 @@ export default function Home() {
         <div className="wrapper">
           <div className={russo.className}><h2 className={styles.portfolioTitle}>Не убедили?</h2></div>
           <p className={styles.callbackSubtitle}>- сделаем <span style={{ color: 'var(--secondary-color)' }}>пробник на 1 м2</span> абсолютно бесплатно</p>
-          <form className={styles.form}>
-            <h3>Закажите бесплатный пробный образец на 1 м2</h3>
-            <input className={styles.input} type='text' placeholder='Ваше имя' />
-            <input className={styles.input} type='text' placeholder='Введите номер телефона' />
-            <button className={styles.submit} type='submit'>Отправить</button>
-            <div className={styles.formCreds}>
-              <p className={styles.formCred}><Image
-                src="/form-check.png"
-                width={20}
-                height={20}
-                alt="Picture of the author"
-              />Согласие на обработку персональных данных</p>
-              <p className={styles.formCred}><Image
-                src="/form-shield.png"
-                width={20}
-                height={20}
-                alt="Picture of the author"
-              />Гарантия конфидециальности</p>
-            </div>
-          </form>
+          <Form location='PAGE' />
         </div>
       </section>
       <section className={styles.quiz}>
@@ -172,7 +186,7 @@ export default function Home() {
           <div className={styles.quizWrapper}>
             <div className={styles.quizToptext}>
               <div className={styles.quizToptextLeft}><div className={russo.className}><h2 className={styles.quizTitle}>Ценовая политика</h2></div>
-                <p style={{ fontSize: '24px' }}>- мы используем прогрессивную систему ценообразования, итоговый расчет зависит от ряда параметров</p>
+                <p className={styles.quizSubtitle}>- мы используем прогрессивную систему ценообразования, итоговый расчет зависит от ряда параметров</p>
               </div>
               <div className={styles.quizToptextRigth}><p style={{ fontWeight: 'bold', fontSize: '18px' }}>Пройдите короткий опрос <span style={{ color: 'var(--globalgreen)' }}>за 1 минуту</span></p>
                 <p>и специалисты New Land рассчитают итоговую стоимость</p></div>
@@ -190,15 +204,15 @@ export default function Home() {
               проконсультируют вас по любому вопросу</p>
           </div>
           <ul className={styles.contactsList}>
-            <li className={styles.contactsListItem}><Image
-              src="/address.png"
+            <li className={styles.contactsListItem}><Image unoptimized
+              src="/nextImages/address.png"
               width={20}
               height={20}
               alt="Picture of the author"
             /><span className={styles.contactsListItemChild}>Адрес</span><span className={styles.contactsListItemChild2}>Москва, ул. Мосфильмовская 17Б</span></li>
             <li className={styles.contactsListItem}>
-              <Image
-                src="/map-email.png"
+              <Image unoptimized
+                src="/nextImages/map-email.png"
                 width={20}
                 height={20}
                 alt="Picture of the author"
@@ -207,8 +221,8 @@ export default function Home() {
               <a href="mailto:info@newland.su" className={styles.contactsListItemChild2}>info@newland.su</a>
             </li>
             <li className={styles.contactsListItem}>
-              <Image
-                src="/map-phone.png"
+              <Image unoptimized
+                src="/nextImages/map-phone.png"
                 width={20}
                 height={20}
                 alt="Picture of the author"
@@ -218,32 +232,32 @@ export default function Home() {
             </li>
           </ul>
           <div className={styles.tools}>
-            <Image
-              src="/tools/1.jpg"
+            <Image unoptimized
+              src="/nextImages/tools/1.jpg"
               width={238 * 0.8}
               height={318 * 0.8}
               alt="Picture of the author"
             />
-            <Image
-              src="/tools/2.jpg"
+            <Image unoptimized
+              src="/nextImages/tools/2.jpg"
               width={382 * 0.8}
               height={287 * 0.8}
               alt="Picture of the author"
             />
-            <Image
-              src="/tools/3.jpg"
+            <Image unoptimized
+              src="/nextImages/tools/3.jpg"
               width={174 * 0.8}
               height={232 * 0.8}
               alt="Picture of the author"
             />
-            <Image
-              src="/tools/4.jpg"
+            <Image unoptimized
+              src="/nextImages/tools/4.jpg"
               width={317 * 0.8}
               height={288 * 0.8}
               alt="Picture of the author"
             />
-            <Image
-              src="/tools/5.jpg"
+            <Image unoptimized
+              src="/nextImages/tools/5.jpg"
               width={200 * 0.8}
               height={345 * 0.8}
               alt="Picture of the author"

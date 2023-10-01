@@ -4,6 +4,7 @@
     width: fit-content;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 5px;
     border: 1px solid #ccc;
@@ -55,28 +56,61 @@
 
 @keyframes fadeIn {
     from {
-      opacity: 0;
+        opacity: 0;
     }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  @keyframes fadeOut {
-    from {
-      opacity: 1;
-    }
-    to {
-      opacity: 0;
-    }
-  }
 
-  .tab.active {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.tab.active {
     display: flex;
     animation: fadeIn 0.5s ease-in forwards;
-  }
-  
-  .tab.inactive {
+}
+
+.tab.inactive {
     display: none;
     animation: fadeOut 0.5s ease-in forwards;
-  }
+}
+
+@media screen and (max-width: 800px) {
+    .tabsMenu {
+        margin: 10px auto;
+        flex-wrap: wrap;
+        gap: 5px;
+        padding: 10px 5px;
+    }
+
+    .tab {
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+    }
+
+    .tab img {
+        max-width: 100%;
+        height: fit-content;
+    }
+
+    .tabContentText {
+        gap: 5px;
+    }
+
+    .tabContentTitle {
+        font-size: 20px;
+    }
+
+    .tabContentP {
+        font-size: 16px;
+    }
+}
