@@ -6,6 +6,7 @@ import { Tabs } from './components/Tabs/Tabs'
 import ImageGallery from "react-image-gallery";
 import { Quiz } from './components/Quiz/Quiz'
 import { Form } from './components/Form/Form'
+import WhatsAppButton from "@/app/components/WhatsAppButton/WhatsAppButton";
 
 const images = [
   {
@@ -265,6 +266,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <WhatsAppButton />
     </>
   )
 }

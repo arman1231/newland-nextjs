@@ -20,6 +20,7 @@ export const Form: React.FC<IFormProps> = ({ location, data }) => {
     const [name, setName] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
     const [message, setMessage] = useState<string | null>(null);
+    const [isLoading, setIsLoading] = useState(false);
 
     const formStyles = {
         [Locations.MODAL]: styles.formModal,
@@ -30,19 +31,33 @@ export const Form: React.FC<IFormProps> = ({ location, data }) => {
 
     const handleSendForm = (e: FormEvent) => {
         e.preventDefault();
+        setIsLoading(true);
 
         if (form.current) {
             const formData = new FormData(form.current);
-            const newData = {...data, user_name: formData.get('user_name'), user_phone: formData.get('user_phone')};
-            const result = location === "QUIZ" ? newData : form.current;         
-            
-            emailjs.send("service_7eyigsk","template_ugsh4o8", result, 'WifPaa3I-RgQMEIKA')
-                .then((result) => {
+            const user_name = formData.get('user_name');
+            const user_phone = formData.get('user_phone');
+
+            const templateParams = location === "QUIZ"
+                ? { ...data, user_name, user_phone }
+                : { user_name, user_phone };
+
+            emailjs.send(
+                "service_7eyigsk",
+                "template_ugsh4o8",
+                templateParams,
+                'WifPaa3I-RgQMEIKA'
+            )
+                .then(() => {
                     setName('');
                     setPhoneNumber('');
                     setMessage('Ваша информация передана успешно');
-                }, (error) => {
-                    console.log(error.text);
+                })
+                .catch((error) => {
+                    console.error('Ошибка отправки:', error.text);
+                })
+                .finally(() => {
+                    setIsLoading(false);
                 });
         }
     };
@@ -66,7 +81,11 @@ export const Form: React.FC<IFormProps> = ({ location, data }) => {
                 value={phoneNumber}
                 onChange={e => setPhoneNumber(e.target.value)}
             />
-            <button className={styles.submit} type='submit' onClick={handleSendForm} disabled={!name || !phoneNumber}>Отправить</button>
+            <button className={styles.submit} type='submit' onClick={handleSendForm} disabled={!name || !phoneNumber || isLoading}>{isLoading ? (
+                <span>Отправка...</span>
+            ) : (
+                'Отправить'
+            )}</button>
             {message && <p style={{color: 'var(--globalgreen)'}}>{message}</p>}
             <div className={styles.formCreds}>
                 <p className={styles.formCred}>
